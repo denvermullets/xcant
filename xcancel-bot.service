@@ -1,0 +1,15 @@
+[Unit]
+Description=XCancel Discord Bot
+After=network.target
+
+[Service]
+Type=simple
+User=deploy
+WorkingDirectory=/home/deploy/xcancel-bot
+ExecStart=/usr/bin/bundle exec ruby bot.rb
+Restart=always
+RestartSec=5
+Environment=DISCORD_TOKEN=your_token_here
+
+[Install]
+WantedBy=multi-user.target
